@@ -1,0 +1,17 @@
+{
+  "name": "homer",
+  "version": "1.0.0",
+  "description": "Home Heath Controller",
+  "main": "api.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Oli",
+  "license": "ISC",
+  "dependencies": {
+    "connect": "^3.4.0",
+    "express": "^4.13.3",
+    "google-auth-library": "^0.9.7",
+    "googleapis": "^2.1.6"
+  }
+}
