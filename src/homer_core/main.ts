@@ -9,8 +9,6 @@ class Core {
 
     constructor() {
 
-
-
         console.log(" ------ Core Init------ ");
 
          console.log("dir: '" + __dirname + "'");

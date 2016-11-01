@@ -37,8 +37,6 @@ var homer_core = {
             { test : /\.ts$/, loader : "tslint-loader" },       
         ]:[],
         loaders: [
-            { test: /\.css$/, loaders: ["style", "css"] },
-            { test: /\.html$/, loader: "raw" },
             { test: /\.json$/, loader: "json-loader"},
             { test : /\.ts?$/, loader : "ts-loader"}
         ]
