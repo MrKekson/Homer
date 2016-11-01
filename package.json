@@ -37,7 +37,8 @@
     "webpacker_d": "webpack --diplay-modules --config ./webpack.config.js",
     "webpacker": "webpack -p --config ./webpack.config.js",
     "watch": "webpack --diplay-modules --watch --config ",
-    "dev_srv": "webpack-dev-server"
+    "dev_srv": "webpack-dev-server",
+    "watch_srv" : "concurrently \"npm run dev_srv\" \"npm run watch\""
   },
   "version": "1.0.0"
 }
