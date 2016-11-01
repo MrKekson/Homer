@@ -1,5 +1,6 @@
 import * as $ from "jquery";
 
 
-console.log("Start");
+
+console.log("Start Client");
 

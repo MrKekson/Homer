@@ -2,8 +2,8 @@
   "author": "Oli",
   "bin": {
     "webpack": "node_modules/.bin/webpack",
-    "webpack-dev-server": "node_modules/.bin/webpack-dev-server",
-    "tsc": "node_modules/.bin/tsc"
+    "tsc": "node_modules/.bin/tsc",
+    "nodemon": "node_modules/.bin/nodemon"
   },
   "dependencies": {
     "@angular/common": "^2.1.2",
@@ -29,21 +29,21 @@
   "devDependencies": {
     "concurrently": "^3.1.0",
     "nodemon": "^1.11.0",
-    "tslint-loader": "^2.1.5",
-    "webpack-dev-server": "^1.16.2"
+    "tslint-loader": "^2.1.5"
   },
   "license": "plumbus!",
   "name": "homer",
   "private": true,
   "scripts": {
     "core": "npm install --production",
-    "core_d": "npm install",
+    "core_dev": "npm install",
     "tscteszt": "tsc -v",
-    "webpacker_d": "webpack --diplay-modules --config ./webpack.config.js",
+    "webpacker_dev": "webpack --diplay-modules --config ./webpack.config.js",
     "webpacker": "webpack -p --config ./webpack.config.js",
-    "watch": "webpack --diplay-modules --watch --config ",
-    "dev_srv": "webpack-dev-server",
-    "watch_srv": "concurrently \"npm run dev_srv\" \"npm run watch\""
+    "wp:w": "webpack --diplay-modules --watch --config ./webpack.config.js",
+    "nd:w" : "nodemon --watch dist --ignore dist/package.js dist/core.js ",
+    "go":"concurrently \"npm run wp:w\" \"npm run nd:w\""
+  
   },
   "version": "1.0.0"
 }

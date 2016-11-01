@@ -1,0 +1,8 @@
+{   
+  "watch": [
+    "dist/core.js"
+  ],
+   "ignore": [
+    "**/*"
+  ]
+}

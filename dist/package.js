@@ -45,7 +45,7 @@
 /***/ function(module, exports) {
 
 	"use strict";
-	console.log("Start");
+	console.log("Start Client");
 
 
 /***/ }
