@@ -1,11 +1,28 @@
 var debug = process.env.NODE_ENV !== "production";
 var webpack = require("webpack");
+var path = require('path');
+var fs = require('fs');
+
+var nodeModules = {};
+fs.readdirSync('node_modules')
+  .filter(function(x) {
+    return ['.bin'].indexOf(x) === -1;
+  })
+  .forEach(function(mod) {
+    nodeModules[mod] = 'commonjs ' + mod;
+  });
 
 //switch (process.env.NODE_ENV) {} is usable if needed
 
 var homer_core = {
+    name : "Homer server code",
+    externals: nodeModules,
     target : 'node',
     context: __dirname,
+    node: {
+        __filename: false,
+        __dirname: false
+    },
     entry: {
         app: __dirname + "\\src\\homer_core\\main.ts"
     },
@@ -17,8 +34,7 @@ var homer_core = {
     },
     module: {
         preloaders: debug ? [
-            { test : /\.ts$/, loader : "tslint-loader" },
-           
+            { test : /\.ts$/, loader : "tslint-loader" },       
         ]:[],
         loaders: [
             { test: /\.css$/, loaders: ["style", "css"] },
@@ -27,8 +43,9 @@ var homer_core = {
             { test : /\.ts?$/, loader : "ts-loader"}
         ]
     },
-    plugins: debug ? [] : [
-       
+    plugins: debug ? [
+        new webpack.DefinePlugin({ $dirname: '__dirname' }),
+    ] : [      
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({compress:false, mangle:false, sourcemap:false})
@@ -36,14 +53,13 @@ var homer_core = {
 };
 
 var homer_web = {
-    targe: "browser",
     name : "Homer client code",
     context: __dirname,
     entry: {
         app: __dirname + "\\src\\homer_web\\main.ts"
     },
     output: {
-        filename: __dirname + "\\dist\\package.js"
+        filename: __dirname + "\\dist\\client\\package.js"
     },
     resolve: {
         extensions: ["", ".ts", ".js"]

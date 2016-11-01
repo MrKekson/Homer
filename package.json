@@ -31,7 +31,7 @@
     "nodemon": "^1.11.0",
     "tslint-loader": "^2.1.5"
   },
-  "license": "plumbus!",
+  "license": "plumbus_2",
   "name": "homer",
   "private": true,
   "scripts": {
@@ -42,8 +42,10 @@
     "webpacker": "webpack -p --config ./webpack.config.js",
     "wp:w": "webpack --diplay-modules --watch --config ./webpack.config.js",
     "nd:w" : "nodemon --watch dist --ignore dist/package.js dist/core.js ",
-    "go":"concurrently \"npm run wp:w\" \"npm run nd:w\""
-  
+    "nd:w_all" : "nodemon dist/core.js --watch",
+    "homer" : "node dist/core.js",
+    "go":"concurrently \"npm run wp:w\" \"npm run nd:w\"",
+    "go_all":"concurrently \"npm run wp:w\" \"npm run nd:w_all\""
   },
   "version": "1.0.0"
 }
