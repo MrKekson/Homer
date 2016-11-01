@@ -12,9 +12,13 @@
     "@angular/platform-browser": "^2.1.2",
     "@angular/router": "^3.1.2",
     "@types/core-js": "^0.9.34",
+    "@types/express": "^4.0.33",
     "@types/jquery": "^2.0.33",
     "angular2": "^2.0.0-beta.17",
+    "console": "^0.5.2",
+    "express": "^4.14.0",
     "jquery": "^3.1.1",
+    "json-loader": "^0.5.4",
     "rxjs": "^5.0.0-rc.1",
     "systemjs": "^0.19.40",
     "ts-loader": "^0.9.5",
@@ -38,7 +42,7 @@
     "webpacker": "webpack -p --config ./webpack.config.js",
     "watch": "webpack --diplay-modules --watch --config ",
     "dev_srv": "webpack-dev-server",
-    "watch_srv" : "concurrently \"npm run dev_srv\" \"npm run watch\""
+    "watch_srv": "concurrently \"npm run dev_srv\" \"npm run watch\""
   },
   "version": "1.0.0"
 }
