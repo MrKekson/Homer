@@ -1,19 +1,12 @@
 //import {bootstrap} from "@angular/platform-browser"
-import {Component} from "@angular/core";
+import { platformBrowserDynamic } from "@angular/platform-browser-dynamic";
 
-console.log("Start Client");
+import "./polyfills";
+import {AppModule} from "./app.module";
 
-@Component({
-    selector : "app",
-    template: "<div><span>Yolo</span></div>"
+const platform = platformBrowserDynamic();
+platform.bootstrapModule( AppModule );
 
-})
-
-class appRoot{
-
-    name : "Homer";
-    status: "--"
-
-}
+console.log("main called")
 
 

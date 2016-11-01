@@ -44,7 +44,7 @@
 /* 0 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	var srv = __webpack_require__(1);
 	var Core = (function () {
 	    function Core() {
@@ -64,7 +64,7 @@
 /* 1 */
 /***/ function(module, exports, __webpack_require__) {
 
-	"use strict";
+	'use strict';
 	var express = __webpack_require__(2);
 	var WebServer = (function () {
 	    function WebServer(port) {
@@ -80,15 +80,13 @@
 	    };
 	    WebServer.prototype.run = function () {
 	        console.log("Starting Express server ....");
-	        var dir = __dirname + "\\client";
-	        var dir2 = express.static(dir);
-	        this._server.use(dir2);
-	        console.log(dir2);
+	        this._server.use(express.static(__dirname + '\\client'));
+	        console.log("la");
 	        this._server.get('/t', function (req, res) {
 	            res.status(200).send('{ "megy": "true" }');
 	        });
 	        this._server.get('/tt', function (req, res) {
-	            res.status(200).send(dir2);
+	            res.status(200).send("ok");
 	        });
 	        this._server.listen(this.port);
 	        console.log("   listening on " + this.port);

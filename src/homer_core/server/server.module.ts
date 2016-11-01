@@ -1,7 +1,7 @@
+'use strict';
+
 import * as express from "express";
 import * as path from "path";
-
-
 
 export class WebServer{ 
     /**
@@ -23,20 +23,18 @@ export class WebServer{
        
         console.log("Starting Express server ....");
 
-        var dir = __dirname + "\\client";
+       
 
-        var dir2 = express.static(dir);
+        this._server.use(express.static(__dirname + '\\client'));
 
-        this._server.use(dir2);
-
-        console.log(dir2);
+        console.log("la");
 
         this._server.get('/t', function ( req, res ){
             res.status(200).send('{ "megy": "true" }');
         })
 
         this._server.get('/tt', function ( req, res ){
-            res.status(200).send(dir2);
+            res.status(200).send("ok");
         })
 
         this._server.listen( this.port );

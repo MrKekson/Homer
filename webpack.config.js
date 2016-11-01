@@ -60,7 +60,7 @@ var homer_web = {
         filename: __dirname + "\\dist\\client\\package.js"
     },
     resolve: {
-        extensions: ["", ".ts", ".js"]
+        extensions: ["", ".ts", ".js",'.json']
     },
     module: {
         preloaders: debug ? [

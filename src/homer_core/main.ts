@@ -1,4 +1,4 @@
-
+'use strict';
 import * as srv from "./server/server.module"
 
 declare var __DEBUG: boolean;
