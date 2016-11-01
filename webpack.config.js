@@ -4,6 +4,7 @@ var webpack = require("webpack");
 //switch (process.env.NODE_ENV) {} is usable if needed
 
 var homer_core = {
+    target : 'node',
     context: __dirname,
     entry: {
         app: __dirname + "\\src\\homer_core\\main.ts"
@@ -31,11 +32,11 @@ var homer_core = {
         new webpack.optimize.DedupePlugin(),
         new webpack.optimize.OccurenceOrderPlugin(),
         new webpack.optimize.UglifyJsPlugin({compress:false, mangle:false, sourcemap:false})
-    ],
-   target : 'node'
+    ]
 };
 
 var homer_web = {
+    targe: "browser",
     name : "Homer client code",
     context: __dirname,
     entry: {
@@ -54,6 +55,7 @@ var homer_web = {
         loaders: [
             { test: /\.css$/, loaders: ["style", "css"] },
             { test: /\.html$/, loader: "raw" },
+            { test: /\.json$/, loader: "json-loader"},
             { test : /\.ts?$/, loader : "ts-loader"}
         ]
     },
@@ -69,5 +71,5 @@ var homer_web = {
     }
 }
 
-module.exports = [homer_core];
+module.exports = [homer_web, homer_core];
 
