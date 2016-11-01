@@ -1,0 +1,3 @@
+import "./filterpage.html!";
+
+

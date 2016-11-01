@@ -1,17 +1,43 @@
 {
-  "name": "homer",
-  "version": "1.0.0",
-  "description": "Home Heath Controller",
-  "main": "api.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
   "author": "Oli",
-  "license": "ISC",
+  "bin": {
+    "webpack": "node_modules/.bin/webpack",
+    "webpack-dev-server": "node_modules/.bin/webpack-dev-server",
+    "tsc": "node_modules/.bin/tsc"
+  },
   "dependencies": {
-    "connect": "^3.4.0",
-    "express": "^4.13.3",
-    "google-auth-library": "^0.9.7",
-    "googleapis": "^2.1.6"
-  }
+    "@angular/common": "^2.1.2",
+    "@angular/core": "^2.1.2",
+    "@angular/http": "^2.1.2",
+    "@angular/platform-browser": "^2.1.2",
+    "@angular/router": "^3.1.2",
+    "@types/core-js": "^0.9.34",
+    "@types/jquery": "^2.0.33",
+    "angular2": "^2.0.0-beta.17",
+    "jquery": "^3.1.1",
+    "rxjs": "^5.0.0-rc.1",
+    "systemjs": "^0.19.40",
+    "ts-loader": "^0.9.5",
+    "typescript": "^2.0.3",
+    "webpack": "^1.13.2"
+  },
+  "description": "Homer the heath controller",
+  "devDependencies": {
+    "concurrently": "^3.1.0",
+    "tslint-loader": "^2.1.5",
+    "webpack-dev-server": "^1.16.2"
+  },
+  "license": "plumbus!",
+  "name": "homer",
+  "private": true,
+  "scripts": {
+    "core": "npm install --production",
+    "core_d": "npm install",
+    "tscteszt": "tsc -v",
+    "webpacker_d": "webpack --diplay-modules --config ./webpack.config.js",
+    "webpacker": "webpack -p --config ./webpack.config.js",
+    "watch": "webpack --diplay-modules --watch --config ",
+    "dev_srv": "webpack-dev-server"
+  },
+  "version": "1.0.0"
 }
